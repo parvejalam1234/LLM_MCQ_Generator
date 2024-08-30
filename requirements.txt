@@ -1,0 +1,13 @@
+langchain_google_genai
+flask
+langchain_core
+python-dotenv
+streamlit
+langchain_community
+bs4
+chromadb
+sentence_transformers
+pypdf
+PyPDF2
+python-docx
+requests
