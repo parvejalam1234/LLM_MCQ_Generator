@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated MCQs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Generated MCQs</h1>
+        {{ tables|safe }}
+        <form id="export-form" action="/export" method="post">
+            <!-- Corrected data serialization for JSON -->
+            <input type="hidden" name="data" id="data" value="{{ tables|tojson }}">
+            <div class="form-group">
+                <label for="format">Export Format:</label>
+                <select class="form-control" id="format" name="format">
+                    <option value="csv">CSV</option>
+                    <option value="json">JSON</option>
+                    <option value="txt">TXT</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Export</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
